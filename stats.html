@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});</script>
+	<script type="text/javascript" src="data1.js"></script>
+	<script type="text/javascript" src="data2.js"></script>
+	<script type="text/javascript" src="data3.js"></script>
+	<script type="text/javascript">
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+
+        var options1 = {
+          title: 'Total images (Total uploads)',
+        };
+        var options2 = {
+          title: 'Nombre de participants (Total uploaders)',
+        };
+		var options3 = {
+			title: 'Images par jour (uploads by day)',
+		};
+
+        var chart1 = new google.visualization.LineChart(document.getElementById('chart_cumul_div'));
+        var chart2 = new google.visualization.LineChart(document.getElementById('chart_user_div'));
+		var chart3 = new google.visualization.LineChart(document.getElementById('chart_upload_div'));
+        chart1.draw(data1, options1);
+        chart2.draw(data2, options2);
+		chart3.draw(data3, options3);
+      }
+    </script>
+  </head>
+  <body style='width:1000px; margin:auto; text-align:center; font-family: "Roboto", sans-serif;'>
+	<h1 style='font-weight:300;'>Stats Wiki Loves Monuments France</h1>
+  <p>Données Wiki Loves Monuments: <a href="wlmfr13.csv">CSV</a> (archives: <a href="wlmfr12.csv">2012</a>, <a href="wlmfr11.csv">2011</a>)</p>
+
+	<div id="chart_upload_div" style="width: 900px; height: 500px;"></div>
+    <div id="chart_cumul_div" style="width: 900px; height: 500px;"></div>
+    <div id="chart_user_div" style="width: 900px; height: 500px;"></div>
+	<p>Données basées sur &lt;<a href="http://toolserver.org/~emijrp/wlm/stats.php">http://toolserver.org/~emijrp/wlm/stats.php</a>&gt;  et mises à jour toutes les 15 minutes.<br />
+	Merci &agrave; &lt;<a href="http://www.geobib.fr/mh/stats/">http://www.geobib.fr/mh/stats/</a>&gt; pour le code de la page
+	</p>
+  </body>
+</html>
