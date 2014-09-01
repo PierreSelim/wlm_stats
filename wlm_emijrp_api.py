@@ -5,7 +5,7 @@ from datetime import timedelta
 
 THIS_WLM	= "france"
 DELIMITER	= ";;;"
-FILE_DB		= "files.txt"
+FILE_DB		= "files-2014.txt"
 YEAR		= 2014
 
 START		= datetime.date(YEAR, 9, 1)
