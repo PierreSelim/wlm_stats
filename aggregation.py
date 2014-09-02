@@ -52,6 +52,11 @@ def main():
 				count=1
 
 	filedb.close()
+        # fixing total due to unordered files
+        total = 0
+        for k in sorted(daily_count.keys()):
+                total += daily_count[k]
+                total_count[k]=total
 	print "total: " + str(count)
 	print "total up: " + str(len(user_count.keys()))
 	print_agg(daily_count, total_count, userd_count, usernd_count)
