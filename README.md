@@ -1,6 +1,12 @@
 WLM Stats
 ==========
-Stats for Wiki Loves Monuments in France 2013
+Stats for Wiki Loves Monuments in France 2014
+
+Run it ?
+--------
+`git clone https://github.com/PierreSelim/wlm_stats.git`
+
+Then add a cron to run update.sh
 
 Authors 
 -------
