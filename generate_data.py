@@ -56,9 +56,13 @@ def main():
 					user[key] = str(previous)
 			lc = lc + 1
 		f.close()
-	save_cumul("data1", cumul)
-	save_cumul("data2", user)
-	save_cumul("data3", upload)
+	# Q&D hack (if magic files is here we will read more than 4 lines.)
+	if lc>4:
+		save_cumul("data1", cumul)
+		save_cumul("data2", user)
+		save_cumul("data3", upload)
+	else:
+		print "Not saving anything magic files is not available"
 
 if __name__ == "__main__":
 	main()
